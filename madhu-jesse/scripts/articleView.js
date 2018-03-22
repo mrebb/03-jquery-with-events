@@ -1,11 +1,11 @@
 'use strict';
 
-// REVIEW: Configure an object to hold all of our functions for dynamic updates and article-related event handlers.
+// REVIEWED: Configure an object to hold all of our functions for dynamic updates and article-related event handlers.
 let articleView = {};
 
 articleView.populateFilters = function() {
   $('article').each(function() {
-    // REVIEW: We can declare several variables at once and assign their values later when using let. Keep in mind that we cannot do this with const.
+    // REVIEWED: We can declare several variables at once and assign their values later when using let. Keep in mind that we cannot do this with const.
     let authorName, category, optionTag;
     if (!$(this).hasClass('template')) {
       // REVIEW: We need to take every author name from the page, and make it an option in the Author filter.
@@ -15,6 +15,8 @@ articleView.populateFilters = function() {
 
       // TODO: Refactor this concatenation using a template literal.
       optionTag = '<option value="' + authorName + '">' + authorName + '</option>';
+      //console.log(optionTag);
+       
 
       if ($('#author-filter option[value="' + authorName + '"]').length === 0) {
         $('#author-filter').append(optionTag);
@@ -76,5 +78,5 @@ articleView.setTeasers = function() {
 
 // TODO: Call all of the above functions, once we are sure the DOM is ready.
 $(document).ready(function() {
-
+  articleView.populateFilters();
 })

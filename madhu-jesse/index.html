@@ -77,9 +77,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="scripts/blogArticles.js"></script>
   <script src="scripts/article.js"></script>
-  <!-- TOBEDONE: Link our new script file in. -->
+  <script src="scripts/articleView.js"></script>
+  <!-- DONE: Link our new script file in. -->
 
   <!-- COMMENT: Explain the ordering of your script files. -->
-  <!-- PUT YOUR RESPONSE HERE -->
+  <!-- jQuery has to be loaded first just because of dependecy for other JS files.blogArticles is an array of objects with raw data which is required to be loaded before article.js is going to utilize.
+  ArticleView.js is going to apply event handling and some rules that are part of user stories which can be loaded last -->
 </body>
 </html>
